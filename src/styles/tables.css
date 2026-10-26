@@ -1,0 +1,128 @@
+/* Tabelas, célula de equipe e números de posição */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #eeeaf3;
+    border-radius: 13px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.data-table th {
+    padding: 13px 16px;
+    color: #827a91;
+    background: #faf9fc;
+    border-bottom: 1px solid #eeeaf3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+}
+
+.data-table td {
+    padding: 14px 16px;
+    color: #494153;
+    border-bottom: 1px solid #f0edf4;
+    font-size: 12px;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.data-table tbody tr:hover td {
+    background: #fcfbfe;
+}
+
+.empty-cell {
+    padding: 28px 16px !important;
+    color: var(--muted) !important;
+    text-align: center;
+    white-space: normal;
+}
+
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.team-avatar {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    color: var(--purple-800);
+    background: var(--purple-100);
+    border-radius: 11px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.team-cell-copy {
+    display: grid;
+    gap: 3px;
+}
+
+.team-cell-copy strong {
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.team-cell-copy small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.score-value {
+    color: var(--purple-800);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.row-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.ranking-table td:first-child {
+    color: var(--purple-700);
+    font-weight: 700;
+}
+
+.rank-number {
+    display: inline-grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 9px;
+    background: #f2eff7;
+    color: #756b84;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.rank-number.rank-1 {
+    background: #fff3cd;
+    color: #93630c;
+}
+
+.rank-number.rank-2 {
+    background: #eef0f5;
+    color: #5d6575;
+}
+
+.rank-number.rank-3 {
+    background: #f8e7dc;
+    color: #93512d;
+}

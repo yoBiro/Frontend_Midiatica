@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Resultado final · Semana Midiática</title>
+
+    <link rel="stylesheet" href="../../styles/globals.css">
+    <link rel="stylesheet" href="./rankingFinal.css">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+    <app-header active="rankingFinal"></app-header>
+
+    <main class="page-content">
+        <section class="final-hero">
+            <span class="final-hero-icon"><i data-lucide="trophy"></i></span>
+            <p class="eyebrow">CLASSIFICAÇÃO OFICIAL</p>
+            <h1>Resultado final</h1>
+            <p class="page-description">Confira a classificação consolidada da competição.</p>
+            <span class="status-pill status-neutral" id="finalCompetitionStatus">Consultando status</span>
+        </section>
+
+        <!-- Os cards do pódio são montados pelo rankingFinal.js -->
+        <section class="podium-grid" id="podiumGrid"></section>
+
+        <section class="surface-card list-card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RESULTADO CONSOLIDADO</p>
+                    <h2>Classificação completa</h2>
+                </div>
+                <button class="button button-secondary" id="refreshFinalRankingButton" type="button"><i data-lucide="refresh-cw"></i> Atualizar</button>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Equipe</th>
+                            <th>Escola</th>
+                            <th>Pontuação final</th>
+                        </tr>
+                    </thead>
+                    <tbody id="finalRankingTableBody">
+                        <tr><td colspan="4" class="empty-cell">Carregando resultado…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="finalRankingFeedback" class="inline-feedback" aria-live="polite"></p>
+        </section>
+
+        <footer class="page-footer">
+            <span>Semana Midiática · ETEC</span>
+            <span>Resultado final</span>
+        </footer>
+    </main>
+
+    <script type="module" src="./rankingFinal.js"></script>
+</body>
+</html>

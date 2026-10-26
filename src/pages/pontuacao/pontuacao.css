@@ -1,0 +1,42 @@
+/* Registrar pontuação */
+
+.context-strip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 13px;
+    margin-bottom: 23px;
+    background: #faf8ff;
+    border: 1px solid #ede5fb;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+.context-strip span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+}
+
+.context-strip svg {
+    width: 14px;
+    height: 14px;
+}
+
+.context-strip strong {
+    color: var(--purple-800);
+}
+
+.context-strip a {
+    margin-left: auto;
+    color: var(--purple-700);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .context-strip {
+        flex-wrap: wrap;
+    }
+}

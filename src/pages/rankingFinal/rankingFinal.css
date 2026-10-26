@@ -1,0 +1,125 @@
+/* Resultado final */
+
+.final-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 0 28px;
+}
+
+.final-hero-icon {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-800));
+    border-radius: 20px;
+    box-shadow: 0 9px 24px rgba(109,40,217,.2);
+}
+
+.final-hero-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.final-hero .status-pill {
+    margin-top: 15px;
+}
+
+.podium-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.podium-card {
+    min-height: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 22px 18px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 19px;
+    box-shadow: var(--shadow-card);
+}
+
+.podium-card.podium-first {
+    min-height: 225px;
+    background: linear-gradient(160deg, #f8f4ff, #fff);
+    border-color: #d8c3ff;
+}
+
+.podium-place {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.podium-medal {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin: 15px 0 12px;
+    color: var(--purple-700);
+    background: var(--purple-100);
+    border-radius: 14px;
+}
+
+.podium-first .podium-medal {
+    color: #95620a;
+    background: #fff0bd;
+}
+
+.podium-medal svg {
+    width: 21px;
+    height: 21px;
+}
+
+.podium-card h2 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    letter-spacing: -.035em;
+}
+
+.podium-card p {
+    margin: 0 0 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.podium-card strong {
+    color: var(--purple-800);
+    font-size: 19px;
+    letter-spacing: -.04em;
+}
+
+.podium-card p:empty {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .podium-grid {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .podium-card,
+    .podium-card.podium-first {
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .podium-first {
+        order: -1;
+    }
+}

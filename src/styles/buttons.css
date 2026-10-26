@@ -1,0 +1,145 @@
+/* Botões, botões de ícone, links e grupos de botões */
+
+.heading-actions,
+.button-row,
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 41px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease;
+    white-space: nowrap;
+}
+
+.button svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2;
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+    box-shadow: none;
+}
+
+.button-primary {
+    color: #fff;
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-700));
+    box-shadow: 0 4px 10px rgba(109,40,217,.15);
+}
+
+.button-primary:hover:not(:disabled) {
+    box-shadow: 0 7px 16px rgba(109,40,217,.22);
+}
+
+.button-secondary {
+    color: #554765;
+    background: #fff;
+    border-color: #e1dbe9;
+}
+
+.button-secondary:hover:not(:disabled) {
+    background: var(--purple-50);
+    border-color: #d4c3f4;
+    color: var(--purple-800);
+}
+
+.button-danger {
+    color: #fff;
+    background: #b91c1c;
+}
+
+.button-danger-soft {
+    color: #a22c40;
+    background: #fff5f5;
+    border-color: #f6dada;
+}
+
+.button-danger-soft:hover:not(:disabled) {
+    background: #fee2e2;
+}
+
+.button-row-wrap {
+    flex-wrap: wrap;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--purple-700);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.text-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: #756b84;
+    background: #fff;
+    border: 1px solid #e7e2ee;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.icon-button svg {
+    width: 15px;
+    height: 15px;
+}
+
+.icon-button:hover {
+    color: var(--purple-700);
+    background: var(--purple-50);
+    border-color: #d9c9f4;
+}
+
+.icon-button.danger:hover {
+    color: var(--danger);
+    background: #fff5f5;
+    border-color: #f4d1d1;
+}
+
+.form-actions {
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+    .button-row .button {
+        flex: 1 1 auto;
+    }
+}

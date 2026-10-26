@@ -1,0 +1,56 @@
+/* Janelas modais (<dialog>) */
+
+.modal-heading h2 {
+    margin: 5px 0 5px;
+    font-size: 18px;
+    letter-spacing: -.035em;
+}
+
+.modal {
+    width: min(500px, calc(100vw - 30px));
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.modal::backdrop {
+    background: rgba(26,16,42,.46);
+    backdrop-filter: blur(4px);
+}
+
+.modal-card {
+    display: grid;
+    gap: 18px;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: var(--shadow-float);
+}
+
+.modal-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.modal-card h2 {
+    margin: 0;
+    font-size: 21px;
+    letter-spacing: -.04em;
+}
+
+.modal-description {
+    margin: -8px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.danger-tile {
+    color: var(--danger);
+    background: var(--danger-bg);
+}

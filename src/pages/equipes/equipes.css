@@ -1,0 +1,48 @@
+/* Gerenciar equipes */
+
+.list-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-field {
+    position: relative;
+    width: min(420px, 100%);
+}
+
+.search-field > svg {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    color: #958ba4;
+    transform: translateY(-50%);
+}
+
+.search-field .text-input {
+    padding-left: 38px;
+}
+
+.list-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 800px) {
+    .list-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+}

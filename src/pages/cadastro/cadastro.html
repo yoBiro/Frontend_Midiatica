@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Cadastro de equipe · Semana Midiática</title>
+
+    <link rel="stylesheet" href="../../styles/globals.css">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+    <app-header active="cadastro"></app-header>
+
+    <main class="page-content narrow-content">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">PARTICIPANTES</p>
+                <h1>Cadastrar equipe</h1>
+                <p class="page-description">Registre o nome da equipe e a escola visitante.</p>
+            </div>
+            <a class="button button-secondary" href="../equipes/equipes.html"><i data-lucide="list"></i> Gerenciar equipes</a>
+        </section>
+
+        <section class="surface-card form-card">
+            <div class="form-card-heading">
+                <span class="large-icon-tile"><i data-lucide="users-round"></i></span>
+                <div>
+                    <h2>Dados da equipe</h2>
+                    <p>O identificador é gerado automaticamente pelo sistema.</p>
+                </div>
+            </div>
+
+            <form id="createTeamForm" class="form-grid" novalidate>
+                <div class="field-group">
+                    <label class="field-label" for="teamName">Nome da equipe <span class="required-mark">*</span></label>
+                    <input class="text-input" id="teamName" name="name" maxlength="100" placeholder="Ex.: Equipe Fênix" required>
+                    <span class="field-help">Use um nome fácil de reconhecer durante os jogos.</span>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="schoolName">Escola de origem <span class="required-mark">*</span></label>
+                    <input class="text-input" id="schoolName" name="school" maxlength="150" placeholder="Ex.: ETEC de São Paulo" required>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit"><i data-lucide="plus"></i> Cadastrar equipe</button>
+                    <button class="button button-secondary" type="reset">Limpar</button>
+                </div>
+
+                <p id="teamFormFeedback" class="inline-feedback form-feedback" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="help-panel">
+            <i data-lucide="info"></i>
+            <p><strong>Antes de cadastrar:</strong> confirme com a organização se a equipe já foi registrada. A pontuação inicial é definida pelo backend.</p>
+        </section>
+
+        <footer class="page-footer">
+            <span>Semana Midiática · ETEC</span>
+            <span>Cadastro de equipes</span>
+        </footer>
+    </main>
+
+    <script type="module" src="./cadastro.js"></script>
+</body>
+</html>

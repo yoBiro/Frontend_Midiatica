@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Ranking dinâmico · Semana Midiática</title>
+
+    <link rel="stylesheet" href="../../styles/globals.css">
+    <link rel="stylesheet" href="./rankingJogo.css">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+    <app-header active="rankingJogo"></app-header>
+
+    <main class="page-content">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">ACOMPANHAMENTO AO VIVO</p>
+                <h1>Ranking dinâmico</h1>
+                <p class="page-description">Classificação geral ordenada pela pontuação acumulada.</p>
+            </div>
+            <div class="heading-actions">
+                <span class="status-pill status-live"><span class="status-dot"></span> Atualização periódica</span>
+                <button class="button button-secondary" id="refreshRankingButton" type="button"><i data-lucide="refresh-cw"></i> Atualizar agora</button>
+            </div>
+        </section>
+
+        <section class="ranking-summary-grid">
+            <article class="surface-card ranking-highlight">
+                <span class="eyebrow">LÍDER ATUAL</span>
+                <span class="winner-icon"><i data-lucide="trophy"></i></span>
+                <h2 id="leaderTeamName">Carregando…</h2>
+                <p id="leaderSchoolName">Consultando classificação</p>
+                <div class="winner-score">
+                    <strong id="leaderPoints">—</strong>
+                    <span>pontos</span>
+                </div>
+            </article>
+
+            <article class="surface-card ranking-stat">
+                <span class="metric-icon purple"><i data-lucide="users"></i></span>
+                <span class="metric-label">Equipes na classificação</span>
+                <strong class="big-stat" id="rankingTeamCount">—</strong>
+                <span class="muted-copy">Times cadastrados na API</span>
+            </article>
+
+            <article class="surface-card ranking-stat">
+                <span class="metric-icon lilac"><i data-lucide="clock-3"></i></span>
+                <span class="metric-label">Última consulta</span>
+                <strong class="time-stat" id="rankingUpdatedAt">—</strong>
+                <span class="muted-copy">A lista é consultada periodicamente</span>
+            </article>
+        </section>
+
+        <section class="surface-card list-card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CLASSIFICAÇÃO</p>
+                    <h2>Todos os times</h2>
+                    <p class="section-description">Empates são exibidos com a mesma posição.</p>
+                </div>
+                <span class="status-pill status-neutral" id="competitionStatusBadge">Status não consultado</span>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Equipe</th>
+                            <th>Escola</th>
+                            <th>Pontos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingTableBody">
+                        <tr><td colspan="4" class="empty-cell">Carregando ranking…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="rankingFeedback" class="inline-feedback" aria-live="polite"></p>
+        </section>
+
+        <footer class="page-footer">
+            <span>Semana Midiática · ETEC</span>
+            <span id="rankingLastUpdated">Aguardando dados da API</span>
+        </footer>
+    </main>
+
+    <script type="module" src="./rankingJogo.js"></script>
+</body>
+</html>

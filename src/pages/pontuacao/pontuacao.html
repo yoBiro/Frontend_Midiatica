@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Registrar pontuação · Semana Midiática</title>
+
+    <link rel="stylesheet" href="../../styles/globals.css">
+    <link rel="stylesheet" href="./pontuacao.css">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+    <app-header active="pontuacao"></app-header>
+
+    <main class="page-content narrow-content">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">GESTÃO DE RESULTADOS</p>
+                <h1>Registrar pontuação</h1>
+                <p class="page-description">Adicione os pontos conquistados por uma equipe.</p>
+            </div>
+            <a class="button button-secondary" href="../rankingJogo/rankingJogo.html"><i data-lucide="chart-no-axes-combined"></i> Ver ranking</a>
+        </section>
+
+        <section class="surface-card form-card">
+            <div class="form-card-heading">
+                <span class="large-icon-tile"><i data-lucide="award"></i></span>
+                <div>
+                    <h2>Adicionar pontos</h2>
+                    <p>Os pontos serão somados à pontuação atual do time.</p>
+                </div>
+            </div>
+
+            <div class="context-strip">
+                <span><i data-lucide="layers"></i> Competição selecionada</span>
+                <strong id="activeCompetitionLabel">Nenhuma selecionada</strong>
+                <a href="../../../index.html">Alterar</a>
+            </div>
+
+            <form id="pointsForm" class="form-grid" novalidate>
+                <div class="field-group">
+                    <label class="field-label" for="pointsTeam">Equipe <span class="required-mark">*</span></label>
+                    <select class="text-input" id="pointsTeam" required>
+                        <option value="">Carregando equipes…</option>
+                    </select>
+                    <span class="field-help">A lista é carregada pela API.</span>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="partialPoints">Pontos a adicionar <span class="required-mark">*</span></label>
+                    <input class="text-input" id="partialPoints" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 10" required>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit"><i data-lucide="plus-circle"></i> Registrar pontos</button>
+                </div>
+
+                <p class="inline-feedback form-feedback" id="pointsFeedback" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="help-panel">
+            <i data-lucide="shield-check"></i>
+            <p><strong>Regra do evento:</strong> a pontuação só pode ser registrada enquanto a competição estiver em andamento. O backend continua sendo responsável por validar essa regra.</p>
+        </section>
+
+        <footer class="page-footer">
+            <span>Semana Midiática · ETEC</span>
+            <span>Registro de pontuação</span>
+        </footer>
+    </main>
+
+    <script type="module" src="./pontuacao.js"></script>
+</body>
+</html>

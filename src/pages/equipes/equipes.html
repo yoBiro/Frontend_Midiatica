@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Gerenciar equipes · Semana Midiática</title>
+
+    <link rel="stylesheet" href="../../styles/globals.css">
+    <link rel="stylesheet" href="./equipes.css">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="../../main.js"></script>
+</head>
+<body>
+    <app-header active="equipes"></app-header>
+
+    <main class="page-content">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">ADMINISTRAÇÃO</p>
+                <h1>Gerenciar equipes</h1>
+                <p class="page-description">Consulte os cadastros, atualize os dados ou remova registros.</p>
+            </div>
+            <a class="button button-primary" href="../cadastro/cadastro.html"><i data-lucide="plus"></i> Nova equipe</a>
+        </section>
+
+        <section class="surface-card list-card">
+            <div class="list-toolbar">
+                <div class="search-field">
+                    <i data-lucide="search"></i>
+                    <input class="text-input" type="search" id="teamSearch" placeholder="Buscar por equipe ou escola…" aria-label="Buscar equipes">
+                </div>
+                <button class="button button-secondary" id="refreshTeamsButton" type="button"><i data-lucide="refresh-cw"></i> Atualizar</button>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Equipe</th>
+                            <th>Escola</th>
+                            <th>Pontuação total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamsTableBody">
+                        <tr><td colspan="4" class="empty-cell">Carregando equipes…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="list-footer">
+                <span id="teamsCountLabel">Carregando…</span>
+                <span class="muted-copy">Os IDs são gerados pelo banco.</span>
+            </div>
+
+            <p id="teamsFeedback" class="inline-feedback" aria-live="polite"></p>
+        </section>
+
+        <footer class="page-footer">
+            <span>Semana Midiática · ETEC</span>
+            <span>Gerenciamento de equipes</span>
+        </footer>
+    </main>
+
+    <!-- Editar equipe -->
+    <dialog class="modal" id="editTeamDialog">
+        <form id="editTeamForm" class="modal-card" method="dialog">
+            <div class="modal-heading">
+                <div>
+                    <p class="eyebrow">EDITAR CADASTRO</p>
+                    <h2>Atualizar equipe</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Fechar" data-close-edit><i data-lucide="x"></i></button>
+            </div>
+
+            <input type="hidden" id="editTeamId">
+
+            <div class="field-group">
+                <label class="field-label" for="editTeamName">Nome da equipe</label>
+                <input class="text-input" id="editTeamName" maxlength="100" required>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="editTeamSchool">Escola</label>
+                <input class="text-input" id="editTeamSchool" maxlength="150" required>
+            </div>
+
+            <p class="field-help">O backend atual espera nome e escola na atualização.</p>
+            <p id="editTeamFeedback" class="inline-feedback" aria-live="polite"></p>
+
+            <div class="form-actions">
+                <button class="button button-primary" type="submit"><i data-lucide="save"></i> Salvar alterações</button>
+                <button class="button button-secondary" type="button" data-close-edit>Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Excluir equipe -->
+    <dialog class="modal" id="deleteTeamDialog">
+        <div class="modal-card">
+            <span class="large-icon-tile danger-tile"><i data-lucide="trash-2"></i></span>
+            <h2>Excluir equipe?</h2>
+            <p id="deleteTeamMessage" class="modal-description">Esta ação não pode ser desfeita.</p>
+            <p id="deleteTeamFeedback" class="inline-feedback" aria-live="polite"></p>
+
+            <div class="form-actions">
+                <button class="button button-danger" id="confirmDeleteTeam" type="button">Excluir equipe</button>
+                <button class="button button-secondary" type="button" data-close-delete>Cancelar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script type="module" src="./equipes.js"></script>
+</body>
+</html>

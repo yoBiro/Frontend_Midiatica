@@ -1,0 +1,32 @@
+/* Tokens de design: cores, raios, sombras e largura do conteúdo */
+:root {
+    --purple-950: #2e1065;
+    --purple-900: #3b0764;
+    --purple-800: #4c1d95;
+    --purple-700: #5b21b6;
+    --purple-600: #6d28d9;
+    --purple-500: #7c3aed;
+    --purple-400: #8b5cf6;
+    --purple-200: #ddd6fe;
+    --purple-100: #ede9fe;
+    --purple-50: #f5f3ff;
+    --ink: #201b2b;
+    --muted: #756f83;
+    --muted-2: #918b9f;
+    --line: #e9e5ef;
+    --surface: #ffffff;
+    --surface-soft: #faf9fc;
+    --background: #f7f6fa;
+    --success: #15803d;
+    --success-bg: #dcfce7;
+    --warning: #a16207;
+    --warning-bg: #fef3c7;
+    --danger: #b91c1c;
+    --danger-bg: #fee2e2;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --shadow-card: 0 8px 26px rgba(47, 27, 76, .045);
+    --shadow-float: 0 20px 60px rgba(31, 20, 48, .16);
+    --content-width: 1240px;
+}

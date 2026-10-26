@@ -1,0 +1,113 @@
+/* Estrutura comum das páginas: conteúdo, títulos, divisores e rodapé */
+
+.page-content {
+    width: min(var(--content-width), calc(100% - 56px));
+    margin: 0 auto;
+    padding: 42px 0 28px;
+}
+
+.narrow-content {
+    width: min(900px, calc(100% - 40px));
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.page-heading h1,
+.final-hero h1 {
+    margin: 5px 0 8px;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.12;
+    letter-spacing: -.055em;
+    font-weight: 700;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--purple-700);
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.page-description {
+    margin: 0;
+    max-width: 670px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin: 5px 0 5px;
+    font-size: 18px;
+    letter-spacing: -.035em;
+}
+
+.section-description {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.divider {
+    height: 1px;
+    margin: 22px 0;
+    background: var(--line);
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 2px 4px;
+    margin-top: 20px;
+    color: #a09aab;
+    font-size: 10px;
+}
+
+@media (max-width: 800px) {
+    .page-content {
+        width: min(100% - 30px, var(--content-width));
+        padding-top: 29px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-content {
+        width: calc(100% - 24px);
+    }
+
+    .page-heading h1 {
+        font-size: 29px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        gap: 7px;
+    }
+}
