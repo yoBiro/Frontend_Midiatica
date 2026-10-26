@@ -15,6 +15,14 @@
     backdrop-filter: blur(16px);
 }
 
+.logo-image {
+    position: relative;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 8px 14px rgba(0,0,0,.19));
+}
+
 .brand {
     display: inline-flex;
     align-items: center;

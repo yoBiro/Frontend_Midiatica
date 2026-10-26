@@ -1,12 +1,8 @@
 import { menu } from "../../scripts/data/menu.js"
 import { renderizarIcones } from "../../scripts/ui/icones.js"
 
-// Raiz do projeto, descoberta a partir deste arquivo (src/components/header/)
-// Assim os links funcionam em qualquer página, não importa a profundidade da pasta
 const RAIZ = new URL("../../../", import.meta.url)
 
-// Uso: <app-header active="equipes"></app-header>
-// O valor de active é o id do link no menu (src/scripts/data/menu.js)
 class AppHeader extends HTMLElement {
 
     connectedCallback() {
@@ -17,7 +13,9 @@ class AppHeader extends HTMLElement {
 
         this.innerHTML = `
             <a class="brand" href="${RAIZ}index.html" aria-label="Semana Midiática — início">
-                <span class="brand-mark"><i data-lucide="trophy"></i></span>
+                <span class="brand-mark">
+                    <img src="${RAIZ}assets/LogoDs.png" alt="Ilustração de competição" class="logo-image">
+                </span>
                 <span class="brand-copy">
                     <strong>Semana Midiática</strong>
                     <small>ETEC · Painel de competição</small>
